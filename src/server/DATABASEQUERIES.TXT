@@ -9,11 +9,12 @@ city varchar(1000),
 streetAddress1 varchar(1000),
 postal_code int,
 websiteURL varchar(100),
-mission varchar(1000),
+mission text,
 tagline varchar(1000),
 EIN int,
 rating int,
 _created datetime default current_timestamp);
 
-SELECT * FROM Charities;
-DROP TABLE Charities;
+
+
+SELECT * FROM charitydb.charities;

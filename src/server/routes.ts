@@ -4,12 +4,21 @@ import DB from "./DB";
 
 const router = express.Router();
 
-router.get("/", async (req, res, next) => {
+// router.get("/charities/get", async (req, res, next) => {
+//   try {
+//     res.json(await DB.Charity.all());
+//   } catch (err) {
+//     next(err);
+//   }
+// });
+
+router.get("/charities/get", async (req, res, next) => {
   try {
     let orgs = await DB.Charity.all();
-    res.json(orgs);
+    console.log(orgs)
+    res.json(orgs)
   } catch (err) {
-    console.error(err);
+    next(err);
   }
 });
 
@@ -18,7 +27,7 @@ router.post("/charities", async (req, res, next) => {
     await DB.Charity.post();
     res.sendStatus(200);
   } catch (err) {
-    console.error(err);
+    next(err);
   }
 });
 
