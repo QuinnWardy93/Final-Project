@@ -4,13 +4,6 @@ import DB from "./DB";
 
 const router = express.Router();
 
-// router.get("/charities/get", async (req, res, next) => {
-//   try {
-//     res.json(await DB.Charity.all());
-//   } catch (err) {
-//     next(err);
-//   }
-// });
 
 router.get("/charities/get", async (req, res, next) => {
   try {
